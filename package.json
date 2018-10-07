@@ -1,0 +1,34 @@
+{
+  "name": "tiny-save-as",
+  "version": "0.0.0",
+  "description": "A tiny JavaScript utility library for file saving",
+  "main": "dist/tiny-save-as.umd.js",
+  "jsnext:main": "dist/tiny-save-as.esm.js",
+  "module": "dist/tiny-save-as.esm.js",
+  "unpkg": "dist/tiny-save-as.umd.min.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c && npm run uglify",
+    "watch": "rollup -w -c",
+    "open": "opn http://localhost:3000/example/",
+    "serve": "serve -l 3000 ./",
+    "start": "npm-run-all -p watch serve open",
+    "uglify": "uglifyjs dist/tiny-save-as.umd.js --comments -c -m -o dist/tiny-save-as.umd.min.js"
+  },
+  "repository": "keqingrong/tiny-save-as",
+  "keywords": [
+    "save",
+    "save-as"
+  ],
+  "author": "Qingrong Ke <keqingrong1992@gmail.com> (https://keqingrong.github.io/)",
+  "license": "MIT",
+  "devDependencies": {
+    "npm-run-all": "^4.1.3",
+    "opn-cli": "^3.1.0",
+    "rollup": "^0.65.2",
+    "serve": "^10.0.0",
+    "uglify-es": "^3.3.9"
+  }
+}
