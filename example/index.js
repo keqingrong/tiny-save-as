@@ -1,3 +1,12 @@
+if (typeof Blob === 'undefined') {
+  document.querySelector('.warning-tip').style.display = 'block';
+  var closeEl = document.querySelector('.warning-tip > .close');
+  if (closeEl) {
+    closeEl.onclick = function (event) {
+      document.querySelector('.warning-tip').style.display = 'none';
+    }
+  }
+}
 
 var json = {
   bool: true,

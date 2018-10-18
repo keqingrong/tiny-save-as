@@ -1,0 +1,34 @@
+.warning-tip {
+    display: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #e09a00;
+    color: #eee;
+    font-family: sans-serif;
+    padding: 10px;
+    z-index: 3000
+}
+
+.warning-tip p {
+    margin: 0
+}
+
+.warning-tip a {
+    color: #fff;
+    font-weight: 700
+}
+
+.warning-tip a:hover {
+    color: #fff
+}
+
+.warning-tip a.close {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    text-decoration: none
+}
