@@ -17,7 +17,7 @@ function saveAs(blob, filename) {
     var link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = filename;
-    link.addEventListener('click', function (event) {
+    link.addEventListener('click', function () {
       // 结束后释放 URL 对象，但如果立即调用 revokeObjectURL 会导致网络错误
       // 如 Chrome: "Failed - Network error"
       requestAnimationFrame(function () {
@@ -30,6 +30,7 @@ function saveAs(blob, filename) {
     return true;
   }
 
+  // IE9/Safari for iOS/Chrome for iOS
   console.warn('该浏览器不支持文件保存'); // eslint-disable-line no-console
   return false;
 }
