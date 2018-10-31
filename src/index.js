@@ -13,7 +13,7 @@ function saveAs(blob, filename) {
     return true;
   }
 
-  if ('download' in HTMLAnchorElement.prototype) {
+  if (typeof URL !== 'undefined' && 'download' in HTMLAnchorElement.prototype) {
     var link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = filename;

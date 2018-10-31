@@ -1,4 +1,4 @@
-if (typeof Blob === 'undefined') {
+if (typeof Blob === 'undefined' || typeof URL === 'undefined') {
   document.querySelector('.warning-tip').style.display = 'block';
   var closeEl = document.querySelector('.warning-tip > .close');
   if (closeEl) {
