@@ -23,7 +23,9 @@ The CDN build is also available on unpkg:
 savaAs(blob, filename)
 ```
 
-## Example
+## Examples
+
+### JSON
 
 ```js
 import savaAs from 'tiny-save-as';
@@ -39,6 +41,43 @@ const json = {
 const str = JSON.stringify(json, null, 2) + '\n';
 const blob = new Blob([str], { type: 'application/json' });
 saveAs(blob, 'blob.json');
+```
+
+### Canvas
+
+```js
+const canvas = document.createElement('canvas');
+canvas.width = 200;
+canvas.height = 200;
+const ctx = canvas.getContext('2d');
+ctx.beginPath();
+ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+ctx.fillStyle = '#f60';
+ctx.fill();
+
+// save canvas as PNG image
+canvas.toBlob((blob) => {
+  saveAs(blob, 'circle.png');
+});
+
+// or sava it as JPEG image
+canvas.toBlob((blob) => {
+  saveAs(blob, 'circle.jpg');
+}, 'image/jpeg', 1);
+```
+
+### SVG
+
+```js
+import savaAs from 'tiny-save-as';
+
+const str = `<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" stroke-width="1" fill="#f60" />
+</svg>`;
+
+const blob = new Blob([str], { type: 'image/svg+xml' });
+saveAs(blob, 'circle.svg');
 ```
 
 ## Browsers support
