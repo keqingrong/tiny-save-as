@@ -17,19 +17,30 @@ The CDN build is also available on unpkg:
 - [unpkg.com/tiny-save-as/dist/tiny-save-as.umd.js](https://unpkg.com/tiny-save-as/dist/tiny-save-as.umd.js)
 - [unpkg.com/tiny-save-as/dist/tiny-save-as.umd.min.js](https://unpkg.com/tiny-save-as/dist/tiny-save-as.umd.min.js)
 
-## Syntax
+## Usage
+
+```js
+// Using ES modules
+import savaAs from 'tiny-save-as';
+
+// Using CommonJS modules
+const savaAs = require('tiny-save-as');
+```
+
+## API
 
 ```js
 savaAs(blob, filename)
 ```
+
+- **blob**: `Blob` A blob to save.
+- **filename**: `string` A file name with a suffix.
 
 ## Examples
 
 ### JSON
 
 ```js
-import savaAs from 'tiny-save-as';
-
 const json = {
   bool: true,
   num: 3.14159,
@@ -69,8 +80,6 @@ canvas.toBlob((blob) => {
 ### SVG
 
 ```js
-import savaAs from 'tiny-save-as';
-
 const str = `<?xml version="1.0"?>
 <svg xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="40" stroke-width="1" fill="#f60" />
