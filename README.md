@@ -23,6 +23,15 @@ The CDN build is also available on unpkg:
 // Using ES modules
 import savaAs from 'tiny-save-as';
 
+// Using ES modules with `import()`
+import('https://unpkg.com/tiny-save-as/dist/tiny-save-as.esm.js')
+  .then(({default: saveAs}) => {
+    saveAs();
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
 // Using CommonJS modules
 const savaAs = require('tiny-save-as');
 ```
@@ -37,6 +46,17 @@ savaAs(blob, filename)
 - **filename**: `string` A file name with a suffix.
 
 ## Examples
+
+### Text
+
+```js
+const str = `# Lorem ipsum
+Lorem ipsum dolor sit amet
+Consectetur adipiscing elit
+`;
+const blob = new Blob([str], { type: 'text/markdown' });
+saveAs(blob, 'README.md');
+```
 
 ### JSON
 
