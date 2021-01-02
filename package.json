@@ -1,6 +1,6 @@
 {
   "name": "tiny-save-as",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A tiny JavaScript utility library for file saving",
   "main": "dist/tiny-save-as.umd.js",
   "jsnext:main": "dist/tiny-save-as.esm.js",
