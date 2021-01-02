@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * 文件保存
  * @param {Blob} blob
